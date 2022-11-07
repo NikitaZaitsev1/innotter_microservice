@@ -24,6 +24,8 @@ RUN poetry config virtualenvs.create false \
   && poetry install --no-interaction --no-ansi
 
 # Creating folders, and files for a project:
+
 ADD run_server.sh /run_server.sh
-RUN chmod a+x /run_server.sh
+ADD run_queue.sh /run_queue.sh
+RUN chmod a+x /run_server.sh /run_queue.sh
 COPY . app/

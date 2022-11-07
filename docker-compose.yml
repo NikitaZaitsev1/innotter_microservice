@@ -18,6 +18,14 @@ services:
     depends_on:
       - db
 
+  queue:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    entrypoint: /run_queue.sh
+    depends_on:
+      - db
+
   db:
     container_name: postgres_db
     image: postgres
