@@ -29,7 +29,7 @@ class DynamodbService:
 
     @staticmethod
     def update_item_dynamodb(table_name: str, user_id: str, attribute: str):
-        """Updating all items from table in DynamoDB"""
+        """Updating item from table in DynamoDB"""
 
         table = DynamodbService.DYNAMODB_CONNECTION.Table(table_name)
         response = table.update_item(
