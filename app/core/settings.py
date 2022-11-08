@@ -5,14 +5,11 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    DB_URL: str = os.getenv("DB_URL")
-    DEBUG: int = os.getenv("DEBUG")
-    AMQP_URL: str = os.getenv("AMQP_URL")
-    AWS_ACCESS_KEY_ID: str = os.getenv("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY: str = os.getenv("AWS_SECRET_ACCESS_KEY")
-    POSTGRES_DB: str = os.getenv("POSTGRES_DB")
-    POSTGRES_USER: str = os.getenv("POSTGRES_USER")
-    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD")
+    DB_URL: str
+    DEBUG: int
+    AMQP_URL: str
+    AWS_ACCESS_KEY_ID: str
+    AWS_SECRET_ACCESS_KEY: str
 
     class Config:
         env_file = ".env"
