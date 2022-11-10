@@ -19,7 +19,7 @@ class DynamodbService:
         )
 
     @staticmethod
-    def get_data_dynamodb(table_name: str):
+    def get_data_dynamodb(table_name: str) -> list:
         """Getting all items from table in DynamoDB"""
 
         table = DynamodbService.DYNAMODB_CONNECTION.Table(table_name)
@@ -28,7 +28,7 @@ class DynamodbService:
         return data
 
     @staticmethod
-    def update_item_dynamodb(table_name: str, user_id: str, attribute: str):
+    def update_item_dynamodb(table_name: str, user_id: str, attribute: str) -> dict:
         """Updating item from table in DynamoDB"""
 
         table = DynamodbService.DYNAMODB_CONNECTION.Table(table_name)
